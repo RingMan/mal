@@ -1,12 +1,18 @@
+(println "dmk load 1")
 (load-file      "../lib/load-file-once.mal")
+(println "dmk load 2")
 (load-file-once "../lib/threading.mal")    ; ->
+(println "dmk load 3")
 (load-file-once "../lib/perf.mal")         ; run-fn-for
+(println "dmk load 4")
 (load-file-once "../lib/test_cascade.mal") ; or
+(println "dmk loaded")
 
 ;;(prn "Start: basic macros/atom test")
 
 (def! atm (atom (list 0 1 2 3 4 5 6 7 8 9)))
 
+(println "dmk starting")
 (println "iters over 10 seconds:"
   (run-fn-for
     (fn* []
